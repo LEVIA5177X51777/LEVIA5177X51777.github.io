@@ -1,6 +1,6 @@
 # Flutter Developer Portfolio
 
-A responsive, static portfolio site for showcasing Flutter and mobile product work. It uses plain HTML, CSS, and JavaScript, so there is no build step or dependency installation.
+A responsive, static portfolio site for showcasing Flutter and mobile product work. It includes an interactive project carousel and hoverable, keyboard-focusable hexagon skill tiles in a dark green theme. It uses plain HTML, CSS, and JavaScript, so there is no build step or dependency installation.
 
 ## Personalize it
 
