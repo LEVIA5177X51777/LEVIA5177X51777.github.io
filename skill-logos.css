@@ -1,0 +1,7 @@
+.skill-logo{width:30px;height:30px;object-fit:contain;transition:opacity .18s ease,transform .18s ease}
+.skill-hex:hover .skill-logo,.skill-hex:focus-visible .skill-logo{opacity:.12;transform:scale(.78)}
+.skill-hex:active .skill-logo{opacity:.12}
+.skill-hex:active .skill-name{opacity:1;transform:translateY(0)}
+@media(max-width:800px){.skill-logo{width:27px;height:27px}}
+@media(max-width:600px){.skill-logo{width:22px;height:22px}}
+@media(prefers-reduced-motion:reduce){.skill-logo{transition:none}}
