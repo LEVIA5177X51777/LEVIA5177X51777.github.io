@@ -7,12 +7,13 @@
 .portrait-details h3{margin:0;color:#eff5ed;font:700 25px/1.2 'Manrope',sans-serif;letter-spacing:-.05em}
 .portrait-details>p:last-child{margin:8px 0 0;color:#a3b1a4;font-size:12px;line-height:1.6}
 .intro-grid .intro-story .eyebrow{padding-top:0}
-.skills-hex-grid{width:calc(var(--hex-size)*4.5);max-width:100%;grid-template-columns:1fr;justify-items:start}
+.skills-hex-grid{width:calc(var(--hex-size)*7);max-width:100%;grid-template-columns:1fr;justify-items:start}
 .skills-hex-row{width:max-content;justify-content:flex-start;gap:0}
 .skills-hex-row+.skills-hex-row{margin-top:calc(var(--hex-size)*-.288675)}
-.skills-hex-row:nth-child(even),.skills-hex-row:last-child{transform:translateX(calc(var(--hex-size)*.5))}
+.skills-hex-row:first-child{transform:translateX(calc(var(--hex-size)*1.5))}
+.skills-hex-row:nth-child(even){transform:none}
 .skill-hex{flex:0 0 var(--hex-size);height:calc(var(--hex-size)*1.154701);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
 .skill-hex:before{inset:1px}
 @media(max-width:800px){.intro-grid{grid-template-columns:minmax(250px,.85fr) minmax(0,1.15fr);gap:6%}.intro-profile{min-height:390px}.portrait-details{padding:18px 20px}.portrait-details h3{font-size:22px}}
-@media(max-width:600px){.intro-grid{display:flex;flex-direction:column;align-items:stretch;gap:29px}.intro-story{order:1}.intro-profile{order:2;width:min(100%,420px);min-height:440px;margin-inline:auto}.portrait-frame{inset:0 16px 24px 0}.portrait-details{width:min(88%,330px);padding:17px 19px}.portrait-details h3{font-size:21px}.intro-band{padding:66px 0}.skills-hex-grid{width:calc(var(--hex-size)*4.5);max-width:100%}.skills-hex-row{gap:0}.skills-hex-row+.skills-hex-row{margin-top:calc(var(--hex-size)*-.288675)}}
-@media(max-width:360px){.intro-profile{min-height:390px}.skills-hex-grid{--hex-size:49px}}
+@media(max-width:600px){.intro-grid{display:flex;flex-direction:column;align-items:stretch;gap:29px}.intro-story{order:1}.intro-profile{order:2;width:min(100%,420px);min-height:440px;margin-inline:auto}.portrait-frame{inset:0 16px 24px 0}.portrait-details{width:min(88%,330px);padding:17px 19px}.portrait-details h3{font-size:21px}.intro-band{padding:66px 0}.skills-hex-grid{--hex-size:min(13.2vw,56px,calc((100vw - 48px)/7));width:calc(var(--hex-size)*7);max-width:100%}.skills-hex-row{gap:0}.skills-hex-row+.skills-hex-row{margin-top:calc(var(--hex-size)*-.288675)}}
+@media(max-width:360px){.intro-profile{min-height:390px}}
