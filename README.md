@@ -1,6 +1,6 @@
 # Flutter Developer Portfolio
 
-A responsive, static portfolio site for showcasing Flutter and mobile product work. It includes an interactive project carousel and hoverable, keyboard-focusable hexagon skill tiles with locally hosted brand logos in a dark green theme. It uses plain HTML, CSS, and JavaScript, so there is no build step or dependency installation.
+A responsive, static portfolio site for showcasing Aftab Rahman’s Flutter and mobile product work. It includes an interactive project carousel, locally hosted tech logos, a three-year experience summary, and an automatically scrolling client-review carousel. It uses plain HTML, CSS, and JavaScript, so there is no build step or dependency installation.
 
 The skills section keeps only named tools and platforms with available brand marks. SVGs are self-hosted in `assets/skills/` rather than loaded from a remote CDN.
 

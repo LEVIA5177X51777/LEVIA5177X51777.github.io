@@ -75,3 +75,17 @@ projectTrack.addEventListener('keydown', (event) => {
 });
 
 updateCarousel();
+
+const reviewTrack = document.querySelector('[data-review-track]');
+if (reviewTrack && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const reviewGroup = reviewTrack.querySelector('.review-group');
+  const reviewCards = reviewGroup ? [...reviewGroup.querySelectorAll('.review-card')] : [];
+  if (reviewGroup && reviewCards.length > 0) {
+    const duplicate = reviewGroup.cloneNode(true);
+    duplicate.setAttribute('aria-hidden', 'true');
+    duplicate.querySelectorAll('[id]').forEach((element) => element.removeAttribute('id'));
+    reviewTrack.append(duplicate);
+    reviewTrack.classList.add('review-track--moving');
+    reviewTrack.style.setProperty('--review-duration', `${Math.max(36, reviewCards.length * 14)}s`);
+  }
+}
