@@ -1,0 +1,12 @@
+.hero-art.hero-proof{padding:25px 28px 22px;border:1px solid rgba(224,245,222,.17);border-radius:18px;background:linear-gradient(135deg,rgba(214,240,218,.105),rgba(80,119,91,.055));box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 18px 48px rgba(0,0,0,.16);-webkit-backdrop-filter:blur(18px) saturate(135%);backdrop-filter:blur(18px) saturate(135%)}
+.hero-proof li{border-color:rgba(224,245,222,.13)}
+.portrait-details{border-color:rgba(233,249,227,.24);background:rgba(23,37,26,.68);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 16px 40px rgba(0,0,0,.28);-webkit-backdrop-filter:blur(16px) saturate(135%);backdrop-filter:blur(16px) saturate(135%)}
+.experience-section{position:relative;isolation:isolate;background:radial-gradient(ellipse at 82% 44%,rgba(85,127,75,.16),transparent 48%),#0c120e}
+.experience-copy{padding:30px 34px;border:1px solid rgba(228,244,222,.16);border-radius:18px;background:linear-gradient(135deg,rgba(224,242,220,.09),rgba(75,111,79,.045));box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 18px 46px rgba(0,0,0,.14);-webkit-backdrop-filter:blur(18px) saturate(130%);backdrop-filter:blur(18px) saturate(130%)}
+.experience-tags span{border-color:rgba(225,244,219,.2);border-radius:999px;background:rgba(239,250,235,.045)}
+.reviews-section{background:radial-gradient(ellipse at 70% 55%,rgba(82,125,74,.17),transparent 51%),#090d0a}
+.review-card{border-color:rgba(233,248,228,.22);background:linear-gradient(145deg,rgba(220,242,220,.13),rgba(94,133,98,.075));box-shadow:inset 0 1px 0 rgba(255,255,255,.16),inset 0 0 28px rgba(255,255,255,.018),0 20px 55px rgba(0,0,0,.22);-webkit-backdrop-filter:blur(20px) saturate(140%);backdrop-filter:blur(20px) saturate(140%);transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.review-card:hover{transform:translateY(-4px);border-color:rgba(201,243,107,.46);background:linear-gradient(145deg,rgba(220,242,220,.17),rgba(94,133,98,.1))}
+.contact-card{border:1px solid rgba(225,244,219,.19);background:linear-gradient(135deg,rgba(225,244,219,.1),rgba(82,123,81,.055)),#111a13;box-shadow:inset 0 1px 0 rgba(255,255,255,.12);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+@media(max-width:600px){.hero-art.hero-proof{padding:21px 20px 18px;border-radius:15px}.experience-copy{padding:23px 21px;border-radius:15px}.review-card{border-radius:19px}}
+@media(prefers-reduced-motion:reduce){.review-card{transition:none}}
