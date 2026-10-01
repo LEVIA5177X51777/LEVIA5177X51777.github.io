@@ -23,6 +23,8 @@ const projectSlides = [...projectTrack.querySelectorAll('.project-card')];
 const carouselCount = document.querySelector('.carousel-count');
 const carouselDots = document.querySelector('.carousel-dots');
 let activeProject = 0;
+let carouselDrag = null;
+let suppressCarouselClick = false;
 
 function updateCarousel() {
   const trackLeft = projectTrack.getBoundingClientRect().left;
@@ -65,6 +67,47 @@ document.querySelectorAll('[data-carousel-step]').forEach((button) => {
 });
 
 projectTrack.addEventListener('scroll', () => window.requestAnimationFrame(updateCarousel), { passive: true });
+projectTrack.addEventListener('pointerdown', (event) => {
+  if (event.pointerType === 'mouse' && event.button !== 0) return;
+  carouselDrag = {
+    pointerId: event.pointerId,
+    startX: event.clientX,
+    startY: event.clientY,
+    startScroll: projectTrack.scrollLeft,
+    dragging: false,
+  };
+});
+projectTrack.addEventListener('pointermove', (event) => {
+  if (!carouselDrag || carouselDrag.pointerId !== event.pointerId) return;
+  const deltaX = event.clientX - carouselDrag.startX;
+  const deltaY = event.clientY - carouselDrag.startY;
+  if (!carouselDrag.dragging && Math.abs(deltaX) > 7 && Math.abs(deltaX) > Math.abs(deltaY)) {
+    carouselDrag.dragging = true;
+    projectTrack.classList.add('is-dragging');
+    projectTrack.setPointerCapture(event.pointerId);
+  }
+  if (carouselDrag.dragging) {
+    event.preventDefault();
+    projectTrack.scrollLeft = carouselDrag.startScroll - deltaX;
+  }
+});
+function finishCarouselDrag(event) {
+  if (!carouselDrag || carouselDrag.pointerId !== event.pointerId) return;
+  if (carouselDrag.dragging) {
+    suppressCarouselClick = true;
+    projectTrack.classList.remove('is-dragging');
+    if (projectTrack.hasPointerCapture(event.pointerId)) projectTrack.releasePointerCapture(event.pointerId);
+    window.setTimeout(() => { suppressCarouselClick = false; }, 0);
+  }
+  carouselDrag = null;
+}
+projectTrack.addEventListener('pointerup', finishCarouselDrag);
+projectTrack.addEventListener('pointercancel', finishCarouselDrag);
+projectTrack.addEventListener('click', (event) => {
+  if (!suppressCarouselClick) return;
+  event.preventDefault();
+  event.stopPropagation();
+}, true);
 projectTrack.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
     event.preventDefault();
